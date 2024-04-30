@@ -11,6 +11,5 @@ declare module 'vue' {
     OrderBookStream: typeof import('./domains/order-book/components/OrderBookStream.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SettingsLog: typeof import('./domains/order-book/components/SettingsLog.vue')['default']
   }
 }
