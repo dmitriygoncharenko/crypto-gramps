@@ -5,7 +5,10 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
     "lint": "eslint . --fix --ignore-path .gitignore",
+    "homepage": "https://dmitrytemlead.github.io/crypto-gramps",
     "api": "npx swagger-typescript-api -p https://binance.github.io/binance-api-swagger/spot_api.yaml -o ./src/api -n api.ts --axios --api-class-name Api"
   },
   "dependencies": {
@@ -13,6 +16,7 @@
     "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
     "core-js": "^3.34.0",
+    "gh-pages": "^6.1.1",
     "roboto-fontface": "*",
     "vue": "^3.4.21",
     "vuetify": "^3.5.8"
