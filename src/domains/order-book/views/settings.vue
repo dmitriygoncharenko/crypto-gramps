@@ -31,10 +31,10 @@ import {storeToRefs} from "pinia";
 const orderBookStore = useOrderBookStore()
 const {currency, currencyList, currencyLogList} = storeToRefs((orderBookStore))
 
-const currencyLogHeaders = [
+const currencyLogHeaders: any[] = [
   { title: '#', value: 'index', align: 'center' },
-  { title: 'Date&Time', key: 'date', align: 'start' },
-  { title: 'New Value', key: 'value', align: 'end' },
+  { title: 'Date&Time', value: 'date', align: 'start' },
+  { title: 'New Value', value: 'value', align: 'end' },
 ]
 
 </script>

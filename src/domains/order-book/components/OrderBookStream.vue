@@ -7,7 +7,7 @@
             Buy Order
           </v-card-title>
           <v-card-subtitle>
-            {{ CurrencyEnum[currency] }}
+            {{ getCurrencyLabel() }}
           </v-card-subtitle>
           <v-data-table
             :headers="streamTableHeaders"
@@ -23,7 +23,7 @@
             Sale Order
           </v-card-title>
           <v-card-subtitle>
-            {{ CurrencyEnum[currency] }}
+            {{ getCurrencyLabel() }}
           </v-card-subtitle>
           <v-data-table
             :headers="streamTableHeaders"
@@ -43,8 +43,9 @@ import { CurrencyEnum } from "@/api/currency.enum";
 import {useDisplay} from "vuetify";
 
 const display = useDisplay();
+const getCurrencyLabel = () => CurrencyEnum[currency.value as keyof typeof CurrencyEnum];
 
-const streamTableHeaders = computed(() => {
+const streamTableHeaders = computed<any[]>(() => {
   if(display.smAndDown.value)
     return [
       { title: 'Price', value: 'price', align: 'left', width: 150 },

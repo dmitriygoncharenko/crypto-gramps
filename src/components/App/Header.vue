@@ -8,8 +8,8 @@
     />
     <v-app-bar-title>{{ title }}</v-app-bar-title>
     <template v-if="!isMobile">
-      <v-btn  v-for="item in items" :key="item.title" @click="onMenuClick(item)">
-        {{ item.meta.title }}
+      <v-btn  v-for="(item, key) in items" :key="key" @click="onMenuClick(item)">
+        {{ item.meta?.title }}
       </v-btn>
     </template>
     <v-app-bar-nav-icon v-else @click.stop="drawer = !drawer" />
@@ -22,7 +22,7 @@
       <v-list-item
         v-for="(item, key) in items"
         :key="key"
-        :title="item.meta.title"
+        :title="item.meta?.title"
         @click="onMenuClick(item)"
       />
     </v-list>
@@ -30,7 +30,7 @@
 </template>
 <script setup lang="ts">
 import { useTitle } from '@vueuse/core';
-import type { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw} from "vue-router";
 import {useDisplay} from "vuetify";
 
 const title = useTitle();
@@ -45,7 +45,7 @@ const items = computed<RouteRecordRaw[]>(() => router.getRoutes()
 const drawer = ref(false)
 
 const onMenuClick = (item: RouteRecordRaw): void => {
-  router.push({ name: item.name })
+  router.push(item.path)
 };
 
 const display = useDisplay();
