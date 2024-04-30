@@ -1,1 +1,0 @@
-import{b as o}from"./route-block-B_A1xBdJ.js";import{_ as t}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{o as c,c as n}from"./index-C3JyDb-4.js";const e={},r={class:"view__root-index"};function s(i,_){return c(),n("div",r," index ")}typeof o=="function"&&o(e);const m=t(e,[["render",s]]);export{m as default};
