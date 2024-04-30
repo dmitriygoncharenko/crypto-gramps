@@ -22,7 +22,7 @@ export default defineConfig({
       Pages({
         dirs: 'src/domains/**/views',
         extensions: ['vue'],
-        importMode: (filepath, options) => 'async',
+        importMode: (filepath, options) => 'sync',
       }),
     Layouts({
       layoutsDirs: 'src/layouts',
